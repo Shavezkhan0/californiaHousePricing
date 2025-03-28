@@ -1,3 +1,33 @@
-<h1>
-    Hellow world
-</h1>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+</head>
+<body>
+    <h2>House Price Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="MedInc">Median Income:</label>
+        <input type="text" id="MedInc" name="MedInc" required><br><br>
+        
+        <label for="HouseAge">House Age:</label>
+        <input type="text" id="HouseAge" name="HouseAge" required><br><br>
+        
+        <label for="AveRooms">Average Rooms:</label>
+        <input type="text" id="AveRooms" name="AveRooms" required><br><br>
+        
+        <label for="AveOccup">Average Occupancy:</label>
+        <input type="text" id="AveOccup" name="AveOccup" required><br><br>
+        
+        <label for="Latitude">Latitude:</label>
+        <input type="text" id="Latitude" name="Latitude" required><br><br>
+        
+        <button type="submit">Predict Price</button>
+    </form>
+    
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
